@@ -5,12 +5,13 @@
 
 **venue-search-service** is a micro-service written using SpringBoot.
 It returns a list of recommended/popular venues near a specified name/location. Service integrates the Foursquare Venues API.
-It service has a single end point and a single query parameter "name" to allow query by name/location. I assume that "name" or "location" are interchangeable.
-Service returns list of recommended/popular venues as Json string.
+The service has a single end point and a single query parameter "name" for querying by name/location.
+I assume that "name" or "location" are interchangeable. Service returns a list of recommended/popular venues in JSON format.
 
 ## Technologies
 
 Java 8, Spring Boot, JUnit, Mockito, SpringBootTest.
+
 
 ## Build & run
 
@@ -40,6 +41,7 @@ I had to familiarise myself with the Foursquare Venue API. I decided to use thei
 
 NOTE: I have included Spring Boot Actuator for demonstration purpose only.
 
+
 ## Tests 
 
 Simple unit tests are provided to demonstrate use of Mockito. They do NOT represent comprehensive for this demo purpose - especially exceptions.
@@ -49,6 +51,7 @@ This integration test utilises the embedded container and allows for easy inject
 
 Usually, the integration tests are in a separate java package (in the project) and they should only be invoked using a specfic maven profile (e.g. mvn -P integration-test);they should not be run as standard unit tests during build process.
 This test exists for the demo and will run during maven build along with other unit tests.
+
 
 ## Considerations for production quality service...
 
