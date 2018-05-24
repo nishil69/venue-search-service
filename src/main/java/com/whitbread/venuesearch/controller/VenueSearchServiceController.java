@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.whitbread.venuesearch.model.Venue;
@@ -19,13 +20,14 @@ public class VenueSearchServiceController {
     /**
      * Performs a search for recommended near the specified location using Foursquare Venues API.
      */
-    @RequestMapping(value = "/venues" , method = RequestMethod.GET, params = "name")
+   // @RequestMapping(value = "/venues" , method = RequestMethod.GET, params = "name")
+    @GetMapping("/venues")
     @ResponseStatus(value=HttpStatus.OK)
-    public List<Venue> getRecommededVenues(@RequestParam("name") String name) {
+    public ResponseEntity<List<Venue>> getRecommededVenues(@RequestParam("name") String name) throws Exception {
         System.out.println("Received GET request for recommended venues near: " + name);
 
         final List<Venue> venues = venueSearchService.getRecommendedVenues(name);
 
-        return venues;
+        return ResponseEntity.ok().body(venues);
     }
 }

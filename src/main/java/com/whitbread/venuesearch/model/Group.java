@@ -1,9 +1,8 @@
 package com.whitbread.venuesearch.model;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class Group implements Serializable {
+public class Group {
 
     private List<Item> items;
 

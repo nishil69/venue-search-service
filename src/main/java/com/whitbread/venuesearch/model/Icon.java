@@ -1,9 +1,7 @@
 package com.whitbread.venuesearch.model;
 
 
-import java.io.Serializable;
-
-public class Icon implements Serializable {
+public class Icon {
 
     private String prefix;
     private String suffix;

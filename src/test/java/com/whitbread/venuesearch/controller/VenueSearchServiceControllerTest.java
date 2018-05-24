@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.http.ResponseEntity;
 
 import com.whitbread.venuesearch.model.Venue;
 import com.whitbread.venuesearch.service.VenueSearchService;
@@ -34,9 +35,9 @@ public class VenueSearchServiceControllerTest {
         List<Venue> expected = Mockito.mock(List.class);
         Mockito.when(venueSearchService.getRecommendedVenues(LOCATION)).thenReturn(expected);
 
-        List<Venue> actual = venueSearchServiceController.getRecommededVenues(LOCATION);
+        ResponseEntity<List<Venue>> actual = venueSearchServiceController.getRecommededVenues(LOCATION);
 
         Mockito.verify(venueSearchService).getRecommendedVenues(LOCATION);
-        assertThat(actual, is(expected));
+        assertThat(actual.getBody(), is(expected));
     }
 }

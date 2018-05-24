@@ -1,8 +1,6 @@
 package com.whitbread.venuesearch.model;
 
-import java.io.Serializable;
-
-public class Contact implements Serializable {
+public class Contact {
 
   private String phone;
   private String formattedPhone;

@@ -1,8 +1,6 @@
 package com.whitbread.venuesearch.model;
 
-import java.io.Serializable;
-
-public class Location implements Serializable {
+public class Location {
 
   private String address;
   private String city;

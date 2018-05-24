@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.whitbread.venuesearch.config.AppConfig;
-import com.whitbread.venuesearch.model.Venue;
 import com.whitbread.venuesearch.model.Item;
 import com.whitbread.venuesearch.model.RecommendedVenues;
+import com.whitbread.venuesearch.model.Venue;
 
 @Service
 public class VenueSearchServiceImpl implements VenueSearchService {
@@ -23,6 +23,7 @@ public class VenueSearchServiceImpl implements VenueSearchService {
     private RestTemplate restTemplate;
 
     @Override
+
     public List<Venue> getRecommendedVenues(String location) {
         final String clientId = appConfig.getClientId();
         final String clientSecret = appConfig.getClientSecret();
@@ -32,12 +33,15 @@ public class VenueSearchServiceImpl implements VenueSearchService {
 
         System.out.println("Making GET request: " + fullURI);
 
+        //  use completablefuture potentially if there are other tasks which can be chained....
         final RecommendedVenues recommendedVenues = restTemplate.getForObject(fullURI, RecommendedVenues.class, clientId, clientSecret, version, location);
+
         final List<Item> items = recommendedVenues.getResponse().getGroups().get(0).getItems();
         final List<Venue> venues = recommendedVenues.getResponse().getGroups().get(0).getItems().stream().map(Item::getVenue).collect(toList());
 
         System.out.println("Received " + venues.size() + " recommended places.");
 
         return venues;
+        //return venues;
     }
 }

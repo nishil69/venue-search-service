@@ -1,9 +1,6 @@
 package com.whitbread.venuesearch.model;
 
-import java.io.Serializable;
-
-
-public class RecommendedVenues implements Serializable {
+public class RecommendedVenues {
 
     private Response response;
 

@@ -1,10 +1,9 @@
 package com.whitbread.venuesearch.model;
 
 
-import java.io.Serializable;
 import java.util.List;
 
-public class Response implements Serializable {
+public class Response {
 
     private int totalResults;
     private List<Group> groups;

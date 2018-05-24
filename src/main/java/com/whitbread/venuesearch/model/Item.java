@@ -1,9 +1,7 @@
 package com.whitbread.venuesearch.model;
 
 
-import java.io.Serializable;
-
-public class Item implements Serializable {
+public class Item {
 
     private Venue venue;
 

@@ -1,9 +1,7 @@
 package com.whitbread.venuesearch.model;
 
 
-import java.io.Serializable;
-
-public class Stats implements Serializable {
+public class Stats {
 
   private int checkinsCount;
   private int usersCount;
