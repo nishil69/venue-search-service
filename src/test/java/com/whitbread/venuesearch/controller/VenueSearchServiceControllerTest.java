@@ -18,9 +18,9 @@ import com.whitbread.venuesearch.service.VenueSearchService;
 
 
 /**
- * Just for demonstration that it can be done if we "need to" unit test controller.
- * However, testing controller does not make sense if dependent beans are unit tested, and a
- * separate "integration test" exists for the controller. We avoid double testing!
+ * Just for demo again - that we can unit test controller if we need to...
+ * However, "unit testing" a controller does not make sense if the service is properly unit tested anyway.
+ * separate "integration test" exists for the controller. We should avoid double testing!
  */
 @RunWith(MockitoJUnitRunner.class)
 public class VenueSearchServiceControllerTest {

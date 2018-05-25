@@ -34,6 +34,10 @@ import com.whitbread.venuesearch.model.RecommendedVenues;
 import com.whitbread.venuesearch.model.Venue;
 import com.whitbread.venuesearch.service.VenueSearchService;
 
+/**
+ * Just for Demo. Can also use mockmvc to write an "Integration Test (IT)".
+ * But this is not a true "IT" test as it does not use real embedded server e.g. Tomcat.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = MOCK, classes = VenueSearchServiceApplication.class)
 @AutoConfigureMockMvc

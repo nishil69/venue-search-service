@@ -2,7 +2,6 @@ package com.whitbread.venuesearch.model;
 
 import java.util.List;
 
-
 /**
  * Venue class to hold all the venue specific details. For this task, we may not need all the info,
  * but Locstion is probably the one we want as it contains address, latitude and longitude etc..
