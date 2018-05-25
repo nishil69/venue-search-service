@@ -33,15 +33,12 @@ public class VenueSearchServiceImpl implements VenueSearchService {
 
         System.out.println("Making GET request: " + fullURI);
 
-        //  use completablefuture potentially if there are other tasks which can be chained....
         final RecommendedVenues recommendedVenues = restTemplate.getForObject(fullURI, RecommendedVenues.class, clientId, clientSecret, version, location);
 
-        final List<Item> items = recommendedVenues.getResponse().getGroups().get(0).getItems();
+        // single "group" in the response seems to contain items/venues!
         final List<Venue> venues = recommendedVenues.getResponse().getGroups().get(0).getItems().stream().map(Item::getVenue).collect(toList());
-
         System.out.println("Received " + venues.size() + " recommended places.");
 
         return venues;
-        //return venues;
     }
 }

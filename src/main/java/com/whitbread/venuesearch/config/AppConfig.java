@@ -36,4 +36,16 @@ public class AppConfig {
 
     public String getVenuesExploreUri() { return venuesExploreUri; }
     public void setVenuesExploreUri(String venuesExploreUri) { this.venuesExploreUri = venuesExploreUri; }
+
+
+    /*@Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.regex("/api.*"))
+                .build();
+    }*/
+
+
 }

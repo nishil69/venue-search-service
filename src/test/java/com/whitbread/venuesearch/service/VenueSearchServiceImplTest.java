@@ -34,7 +34,8 @@ public class VenueSearchServiceImplTest {
 
     // collaborator(s)
     @Mock
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplate;      // can use mockmvc here.
+
     @Mock
     private AppConfig appConfig;
 
@@ -63,7 +64,6 @@ public class VenueSearchServiceImplTest {
                 version,
                 LOCATION)).thenReturn(recommendedVenues);
 
-        // make the call
         List<Venue> actual = venueSearchService.getRecommendedVenues(LOCATION);
 
         // verify that the actual method call took place.
@@ -71,4 +71,13 @@ public class VenueSearchServiceImplTest {
         assertThat(actual, is(expected));
         assertEquals(actual.get(0).getId(), expected.get(0).getId());   // demo
     }
+
+    /**
+     * We may have further tests like the following....
+     * 1. like null or empty json string test (assuming foursquare returns that in some cases)
+     * 2. if we had "mapper/converters" we would need tests here for normal and abnormal json strings (etc. missing locations etc)
+     */
+
+
+
 }
