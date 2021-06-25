@@ -44,9 +44,9 @@ NOTE: I have included Spring Boot Actuator for demonstration purpose only.
 
 ## Tests 
 
-Simple unit tests are provided to demonstrate use of Mockito. They do NOT represent comprehensive for this demo purpose - especially exceptions.
+Simple unit tests are provided to demonstrate use of Mockito. They do NOT represent comprehensive test suite for this demo purpose - especially exceptions.
 
-I've also included an **Integration Test** (**VenueServiceControllerIntegrationTest file) to demonstrate how **Spring Boot Test** support should be used to write integration tests (mock or real).
+I've also included an **Integration Test** (**VenueServiceControllerIntegrationTest file) to demonstrate how **Spring Boot Test** support can help write integration tests (mock or real).
 This integration test utilises the embedded container and allows for easy injection of beans and environment specfic properties into the test. 
 
 Usually, the integration tests are in a separate java package (in the project) and they should only be invoked using a specfic maven profile (e.g. mvn -P integration-test);they should not be run as standard unit tests during build process.
@@ -55,7 +55,7 @@ This test exists for the demo and will run during maven build along with other u
 
 ## Considerations for production quality service...
 
-Few points below to consider.
+Few points below for further considerations:
 - "Mapper" objects can be used when returning POJOs (returned by foursquare API) back to the client These allow for selected data to be returned to the client for security reasons. Futhermore, "Lombok" plugin can be used for easier creation and use of the POJOs.
 - As discussed, **Integration Test** can be written which can be run using a Spring Profile.
 - Basic Spring Boot security can be incorporated. Although OAuth or Kerberos tokens are typically used in production quality services.
